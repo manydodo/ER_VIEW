@@ -13,7 +13,7 @@
     { "name": "Resume_Base" },
     { "name": "Emp_Tags" },
     { "name": "Resume_Relations" },
-    { "name": "Resume_Education" },
+    { "name": "Resume_Educations" },
     { "name": "Resume_Works" },
     { "name": "Resume_Honors" },
     { "name": "Resume_Attachments" } ,
@@ -128,7 +128,7 @@
       "fk": "Resume_Base.ID"
     },
     {
-      "source": "Resume_Education",
+      "source": "Resume_Educations",
       "target": "Resume_Base",
       "value": 0.5,
       "fk": "Resume_Base.ID"
