@@ -33,7 +33,7 @@
         <viz:position x="-212.76357" y="245.29176" z="0.0"></viz:position>
         <viz:color r="236" g="81" b="72"></viz:color>
       </node>
-      <node id="3" label="Resume_Education" title="Resume_Education">
+      <node id="3" label="Resume_Educations" title="Resume_Educations">
         <attvalues>
           <attvalue for="modularity_class" value="0"></attvalue>
         </attvalues>
@@ -217,7 +217,7 @@
         <viz:position x="82.80825" y="-203.1144" z="0.0"></viz:position>
         <viz:color r="236" g="81" b="72"></viz:color>
       </node>
-      <node id="26" label="Emp_Punishment" title="Emp_Punishment">
+      <node id="26" label="Emp_Punishments" title="Emp_Punishments">
         <attvalues>
           <attvalue for="modularity_class" value="2"></attvalue>
         </attvalues>
