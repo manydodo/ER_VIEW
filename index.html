@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+       <title>DBS'ER of WHFJ</title>
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/jquery/jquery.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript" charset="UTF-8">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom, "dark");
+var app = {};
+option = null;
+myChart.showLoading();
+$.get('DBS_WHFJ.xml', function (xml) {
+    myChart.hideLoading();
+
+    var graph = echarts.dataTool.gexf.parse(xml);
+    var categories = [{ name: '招录' }, { name: '档案' }, { name: '业务记录' }, { name: '业务记录' }, { name: '花名册' }, { name: '业务流程' }, { name: '系统' }];
+
+    graph.nodes.forEach(function (node) {
+        node.category = node.attributes.modularity_class;
+        node.itemStyle = null;
+
+        node.symbolSize = 11;
+        graph.links.forEach(function (link) {
+            if(link.target == node.id) {
+                node.symbolSize += 2;
+            };
+        });
+        node.value = node.symbolSize;
+
+        node.label = {
+            normal: {
+                show: node.symbolSize > 10
+            }
+        };
+    });
+    option = {
+        tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove',
+            formatter: function (params) {
+                return params.data.title;
+            }
+        },
+        legend: [{
+            orient: 'vertical',
+            left: 'right',
+            // selectedMode: 'single',
+            data: categories.map(function (a) {
+                return a.name;
+            })
+        }],
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series : [
+            {
+                type: 'graph',
+                layout: 'circular',
+                circular: {
+                    rotateLabel: true
+                },
+                edgeSymbol: ['none','arrow'],
+                data: graph.nodes,
+                links: graph.links,
+                categories: categories,
+                roam: true,
+                focusNodeAdjacency: true,
+                label: {
+                    normal: {
+                        position: 'right',
+                        formatter: '{b}'
+                    }
+                },
+                lineStyle: {
+                    normal: {
+                        color: 'source',
+                        curveness: 0.3
+                    }
+                }
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+}, 'xml');;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
