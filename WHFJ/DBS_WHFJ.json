@@ -1,0 +1,727 @@
+﻿{
+  "nodes": [
+    { "name": "SF_OrganizationUnit" },
+    { "name": "SF_Post" },
+    { "name": "SF_User" },
+    { "name": "Emp_Base" },
+    { "name": "Emp_Contracts" },
+    { "name": "Roster_Detail" },
+    { "name": "Roster" },
+    { "name": "Biz_Contract_New" },
+    { "name": "SF_Attachments" },
+    { "name": "Resume_Contacts" },
+    { "name": "Resume_Base" },
+    { "name": "Emp_Tags" },
+    { "name": "Resume_Relations" },
+    { "name": "Resume_Education" },
+    { "name": "Resume_Works" },
+    { "name": "Resume_Honors" },
+    { "name": "Resume_Attachments" } ,
+    { "name": "Per_BlackList" },
+    { "name": "Per_WhiteList" } ,
+    { "name": "Emp_Changes" },
+    { "name": "Emp_Promotions" },
+    { "name": "Emp_Certificates" },
+    { "name": "Emp_Equipments" },
+    { "name": "Emp_Commendations" },
+    { "name": "Emp_Punishments" },
+    { "name": "Emp_Casualties" },
+    { "name": "Emp_Policemen" },
+    { "name": "Emp_Trainings" },
+    { "name": "Emp_Evaluations" },
+    { "name": "Emp_Reports" },
+    { "name": "Emp_Attendances" },
+    { "name": "Emp_Wages" },
+    { "name": "Biz_Contract_Renew" },
+    { "name": "Biz_Contract_Cancel" },
+    { "name": "Biz_Change" },
+    { "name": "Biz_Promotion" },
+    { "name": "Biz_Certificate_New" },
+    { "name": "Biz_Certificate_Renew" },
+    { "name": "Biz_Certificate_Cancel" },
+    { "name": "Biz_Equipment_New" },
+    { "name": "Biz_Equipment_Renew" },
+    { "name": "Biz_Equipment_Cancel" },
+    { "name": "Biz_Commendation" },
+    { "name": "Biz_Punishment" },
+    { "name": "Biz_Casualty" },
+    { "name": "Biz_Policeman" },
+    { "name": "Biz_Training" },
+    { "name": "Biz_Evaluation" },
+    { "name": "Biz_Report" },
+    { "name": "Biz_Attendance" },
+    { "name": "Biz_Wages" },
+    { "name": "Emp_Contacts" },
+    { "name": "Emp_Relations" },
+    { "name": "Emp_Educations" },
+    { "name": "Emp_Works" },
+    { "name": "Emp_Honors" },
+    { "name": "Emp_Attachments" },
+    { "name": "Biz_Employ_Plan" },
+    { "name": "Employ_Plan_Detail" },
+    { "name": "Biz_Employ_Fact" },
+    { "name": "Employ_Fact_Detail" },
+    { "name": "_" },
+    { "name": "_ " },
+    { "name": "_  " },
+    { "name": "_   " }
+  ],
+  "links": [
+    {
+      "source": "SF_OrganizationUnit",
+      "target": "SF_Post",
+      "value": 1,
+      "fk": "SF_OrganizationUnit.ID"
+    },
+    {
+      "source": "SF_Post",
+      "target": "SF_User",
+      "value": 0.5,
+      "fk": "SF_Post.ID"
+    },
+    {
+      "source": "SF_User",
+      "target": "Emp_Base",
+      "value": 1.5,
+      "fk": "SF_User.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Contracts",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Contracts",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Contracts.ID"
+    },
+    {
+      "source": "Roster_Detail",
+      "target": "Roster",
+      "value": 8,
+      "fk": "Roster.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Certificate_New",
+      "value": 0.5,
+      "fk": "Biz_Certificate_New.ID"
+    },
+    {
+      "source": "Biz_Certificate_New",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Certificate_New.ID"
+    },
+    {
+      "source": "Resume_Contacts",
+      "target": "Resume_Base",
+      "value": 0.5,
+      "fk": "Resume_Base.ID"
+    },
+    {
+      "source": "Resume_Relations",
+      "target": "Resume_Base",
+      "value": 0.5,
+      "fk": "Resume_Base.ID"
+    },
+    {
+      "source": "Resume_Education",
+      "target": "Resume_Base",
+      "value": 0.5,
+      "fk": "Resume_Base.ID"
+    },
+    {
+      "source": "Resume_Works",
+      "target": "Resume_Base",
+      "value": 0.5,
+      "fk": "Resume_Base.ID"
+    },
+    {
+      "source": "Resume_Honors",
+      "target": "Resume_Base",
+      "value": 0.5,
+      "fk": "Resume_Base.ID"
+    },
+    {
+      "source": "Resume_Attachments",
+      "target": "Resume_Base",
+      "value": 0.5,
+      "fk": "Resume_Base.ID"
+    },
+    {
+      "source": "Resume_Base",
+      "target": "Emp_Tags",
+      "value": 0.5,
+      "fk": "Resume_Base.PRCID"
+    },
+    {
+      "source": "Emp_Tags",
+      "target": "Emp_Base",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Resume_Base",
+      "target": "Per_BlackList",
+      "value": 0.5,
+      "fk": "Resume_Base.PRCID"
+    },
+    {
+      "source": "Per_BlackList",
+      "target": "Emp_Base",
+      "value": 0.5,
+      "fk": "Emp_Base.PRCID"
+    },
+    {
+      "source": "Resume_Base",
+      "target": "Per_WhiteList",
+      "value": 0.5,
+      "fk": "Resume_Base.PRCID"
+    },
+    {
+      "source": "Per_WhiteList",
+      "target": "Emp_Base",
+      "value": 0.5,
+      "fk": "Emp_Base.PRCID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Changes",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Promotions",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Certificates",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Equipments",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Commendations",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Punishments",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Casualties",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Policemen",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Trainings",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Evaluations",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Reports",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Attendances",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Wages",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Changes",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Changes.ID"
+    },
+    {
+      "source": "Emp_Promotions",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Promotions.ID"
+    },
+    {
+      "source": "Emp_Certificates",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Certificates.ID"
+    },
+    {
+      "source": "Emp_Equipments",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Equipments.ID"
+    },
+    {
+      "source": "Emp_Commendations",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Commendations.ID"
+    },
+    {
+      "source": "Emp_Punishments",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Punishments.ID"
+    },
+    {
+      "source": "Emp_Casualties",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Casualties.ID"
+    },
+    {
+      "source": "Emp_Policemen",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Policemen.ID"
+    },
+    {
+      "source": "Emp_Trainings",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Trainings.ID"
+    },
+    {
+      "source": "Emp_Evaluations",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Evaluations.ID"
+    },
+    {
+      "source": "Emp_Reports",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Reports.ID"
+    },
+    {
+      "source": "Emp_Attendances",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Attendances.ID"
+    },
+    {
+      "source": "Emp_Wages",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Emp_Wages.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Contract_New",
+      "value": 0.5,
+      "fk": "Biz_Contract_New.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Contract_Renew",
+      "value": 0.5,
+      "fk": "Biz_Contract_Renew.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Contract_Cancel",
+      "value": 0.5,
+      "fk": "Biz_Contract_Cancel.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Change",
+      "value": 0.5,
+      "fk": "Biz_Change.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Promotion",
+      "value": 0.5,
+      "fk": "Biz_Promotion.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Certificate_Renew",
+      "value": 0.5,
+      "fk": "Biz_Certificate_Renew.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Certificate_Cancel",
+      "value": 0.5,
+      "fk": "Biz_Certificate_Cancel.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Equipment_New",
+      "value": 0.5,
+      "fk": "Biz_Equipment_New.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Equipment_Renew",
+      "value": 0.5,
+      "fk": "Biz_Equipment_Renew.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Equipment_Cancel",
+      "value": 0.5,
+      "fk": "Biz_Equipment_Cancel.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Commendation",
+      "value": 0.5,
+      "fk": "Biz_Commendation.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Punishment",
+      "value": 0.5,
+      "fk": "Biz_Punishment.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Casualty",
+      "value": 0.5,
+      "fk": "Biz_Casuality.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Policeman",
+      "value": 0.5,
+      "fk": "Biz_Policeman.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Training",
+      "value": 0.5,
+      "fk": "Biz_Training.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Evaluation",
+      "value": 0.5,
+      "fk": "Biz_Evaluation.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Report",
+      "value": 0.5,
+      "fk": "Biz_Report.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Attendance",
+      "value": 0.5,
+      "fk": "Biz_Attendance.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Wages",
+      "value": 0.5,
+      "fk": "Biz_Wages.ID"
+    },
+    {
+      "source": "Biz_Contract_New",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "SF_Attachments.ID"
+    },
+    {
+      "source": "Biz_Contract_Renew",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Contract_Renew.ID"
+    },
+    {
+      "source": "Biz_Contract_Cancel",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Contract_Cancel.ID"
+    },
+    {
+      "source": "Biz_Change",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Change.ID"
+    },
+    {
+      "source": "Biz_Promotion",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Promotion.ID"
+    },
+    {
+      "source": "Biz_Certificate_Renew",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Certificate_Renew.ID"
+    },
+    {
+      "source": "Biz_Certificate_Cancel",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Certificate_Cancel.ID"
+    },
+    {
+      "source": "Biz_Equipment_New",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Equipment_New.ID"
+    },
+    {
+      "source": "Biz_Equipment_Renew",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Equipment_Renew.ID"
+    },
+    {
+      "source": "Biz_Equipment_Cancel",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Equipment_Cancel.ID"
+    },
+    {
+      "source": "Biz_Commendation",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Commendation.ID"
+    },
+    {
+      "source": "Biz_Promotion",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Promotion.ID"
+    },
+    {
+      "source": "Biz_Punishment",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Punishment.ID"
+    },
+    {
+      "source": "Biz_Casualty",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Casualty.ID"
+    },
+    {
+      "source": "Biz_Policeman",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Policeman.ID"
+    },
+    {
+      "source": "Biz_Training",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Training.ID"
+    },
+    {
+      "source": "Biz_Evaluation",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Evaluation.ID"
+    },
+    {
+      "source": "Biz_Report",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Report.ID"
+    },
+    {
+      "source": "Biz_Attendance",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Attendance.ID"
+    },
+    {
+      "source": "Biz_Wages",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Wages.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Employ_Plan",
+      "value": 0.5,
+      "fk": "Biz_Employ_Plan.ID"
+    },
+    {
+      "source": "Biz_Employ_Plan",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Employ_Plan.ID"
+    },
+    {
+      "source": "Roster",
+      "target": "Biz_Employ_Fact",
+      "value": 0.5,
+      "fk": "Biz_Employ_Fact.ID"
+    },
+    {
+      "source": "Biz_Employ_Fact",
+      "target": "SF_Attachments",
+      "value": 0.5,
+      "fk": "Biz_Employ_Plan.ID"
+    },
+    {
+      "source": "SF_Post",
+      "target": "Employ_Plan_Detail",
+      "value": 0.5,
+      "fk": "SP_Post.ID"
+    },
+    {
+      "source": "Employ_Plan_Detail",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Employ_Plan_Detail.ID"
+    },
+    {
+      "source": "Resume_Base",
+      "target": "Employ_Fact_Detail",
+      "value": 0.5,
+      "fk": "Resume_Base.ID"
+    },
+    {
+      "source": "Employ_Fact_Detail",
+      "target": "Roster_Detail",
+      "value": 0.5,
+      "fk": "Employ_Fact_Detail.ID"
+    },
+    {
+      "source": "SF_OrganizationUnit",
+      "target": "SF_User",
+      "value": 1,
+      "fk": "SF_OrganizationUnit.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Contacts",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Relations",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Educations",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Works",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Honors",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Base",
+      "target": "Emp_Attachments",
+      "value": 0.5,
+      "fk": "Emp_Base.ID"
+    },
+    {
+      "source": "Emp_Contacts",
+      "target": "_",
+      "value": 0.01,
+      "fk": ""
+    },
+    {
+      "source": "Emp_Relations",
+      "target": "_",
+      "value": 0.01,
+      "fk": ""
+    },
+    {
+      "source": "Emp_Educations",
+      "target": "_",
+      "value": 0.01,
+      "fk": ""
+    },
+    {
+      "source": "Emp_Works",
+      "target": "_",
+      "value": 0.01,
+      "fk": ""
+    },
+    {
+      "source": "Emp_Honors",
+      "target": "_",
+      "value": 0.01,
+      "fk": ""
+    },
+    {
+      "source": "Emp_Attachments",
+      "target": "_",
+      "value": 0.01,
+      "fk": ""
+    },
+    {
+      "source": "_",
+      "target": "_ ",
+      "value": 0.01,
+      "fk": ""
+    },
+    {
+      "source": "_ ",
+      "target": "_  ",
+      "value": 0.01,
+      "fk": ""
+    },
+    {
+      "source": "_  ",
+      "target": "_   ",
+      "value": 0.01,
+      "fk": ""
+    }
+
+  ]
+}
+
