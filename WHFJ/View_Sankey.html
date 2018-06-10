@@ -22,7 +22,7 @@ var myChart = echarts.init(dom);
 var app = {};
 option = null;
 myChart.showLoading();
-$.get('DBS_WHFJ.json', function (data) {
+$.get('https://github.com/manydodo/ER_VIEW/blob/master/WHFJ/DBS_WHFJ.json', function (data) {
     myChart.hideLoading();
 
     myChart.setOption(option = {

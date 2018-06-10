@@ -10,7 +10,7 @@
        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-       <script type="text/javascript" src="js/dataTool.min.js"></script>
+       <script type="text/javascript" src="https://github.com/manydodo/ER_VIEW/blob/master/WHFJ/js/dataTool.min.js"></script>
        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
@@ -22,7 +22,7 @@ var myChart = echarts.init(dom, "dark");
 var app = {};
 option = null;
 myChart.showLoading();
-$.get('DBS_WHFJ.xml', function (xml) {
+$.get('https://github.com/manydodo/ER_VIEW/blob/master/WHFJ/DBS_WHFJ.xml', function (xml) {
     myChart.hideLoading();
 
     var graph = echarts.dataTool.gexf.parse(xml);
